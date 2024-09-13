@@ -4,6 +4,7 @@ import { HiOutlineCalendarDays } from "react-icons/hi2";
 import { IoCallOutline } from "react-icons/io5";
 import { SlLocationPin } from "react-icons/sl";
 import { useLoaderData, useParams } from "react-router-dom";
+import { saveLocalstorage } from "../utilites/Localstorage";
 
 const JobDetails = () => {
   const jobs = useLoaderData();
@@ -20,11 +21,25 @@ const JobDetails = () => {
     contact_information,
   } = filterJob;
 
+  const handleApplyjob = (job) => {
+    saveLocalstorage(job);
+  };
+
   return (
-    <div className="my-6">
-      <h1 className=" text-5xl font-bold text-center">Job Details</h1>
-      <div className="grid grid-cols-6 gap-5 my-6">
-        <div className="border col-span-4 space-y-6 rounded-lg p-5">
+    <div className="my-20 relative">
+      <h1 className=" text-4xl font-bold text-center">Job Details</h1>
+      <img
+        className="absolute -top-20 right-0 size-32"
+        src="https://res.cloudinary.com/dvp64j4a3/image/upload/v1726253852/bg2_rtjm1j.png"
+        alt=""
+      />
+      <img
+        className="absolute -top-20 left-0 size-32"
+        src="https://res.cloudinary.com/dvp64j4a3/image/upload/v1726253846/bg1_idnbxk.png"
+        alt=""
+      />
+      <div className="grid md:grid-cols-6 md:gap-5 gap-y-5 my-10">
+        <div className="border md:col-span-4 space-y-6 rounded-lg p-5">
           <h1 className="font-semibold">
             Job Description :
             <span className="font-normal">{job_description}</span>
@@ -68,7 +83,10 @@ const JobDetails = () => {
             <SlLocationPin className="mt-1 text-[#7E90FEFF] text-2xl" />
             <span>Address : {contact_information.address}</span>
           </h2>
-          <button className="w-full text-white bg-blue-500 px-4 py-2 font-semibold rounded-md">
+          <button
+            onClick={() => handleApplyjob(filterJob)}
+            className="w-full text-white bg-blue-500 px-4 py-2 font-semibold rounded-md"
+          >
             Apply Now
           </button>
         </div>
