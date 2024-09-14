@@ -3,7 +3,9 @@ const Category = () => {
     return (
       <div className="my-10">
         <div className="text-center">
-          <h2 className=" text-4xl md:text-5xl pb-4 font-extrabold">Job Category List</h2>
+          <h2 className=" text-4xl md:text-3xl pb-4 font-bold">
+            Job Category List
+          </h2>
           <p>
             Explore thousands of job opportunities with all the information you
             need. Its your future

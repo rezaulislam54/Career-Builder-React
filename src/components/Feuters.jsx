@@ -14,7 +14,7 @@ const Feuters = () => {
     return (
       <div className="my-5">
         <div className="text-center">
-          <h2 className="text-5xl pb-4 font-extrabold">Job Category List</h2>
+          <h2 className="text-3xl pb-4 font-bold">Job Category List</h2>
           <p>
             Explore thousands of job opportunities with all the information you
             need. Its your future
@@ -29,7 +29,9 @@ const Feuters = () => {
         <div className="text-center">
           <button
             onClick={() => setjoblength(jobs.length)}
-            className={`text-white bg-blue-500 px-4 py-2 font-semibold rounded-md ${joblength === jobs.length &&'hidden'}`}
+            className={`text-white bg-blue-500 px-4 py-2 font-semibold rounded-md ${
+              joblength === jobs.length && "hidden"
+            }`}
           >
             Show All Jobs
           </button>
